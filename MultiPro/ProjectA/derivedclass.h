@@ -9,7 +9,7 @@ public:
     DerivedClass();
     ~DerivedClass();
     void display() override;
-    void call(BaseClass base);
+    void call(BaseClass base[]);
     void testCall();
 };
 
