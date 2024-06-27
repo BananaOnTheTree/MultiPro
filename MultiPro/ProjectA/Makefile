@@ -52,9 +52,13 @@ OBJECTS_DIR   = ./
 
 ####### Files
 
-SOURCES       = main.cpp \
+SOURCES       = baseclass.cpp \
+		derivedclass.cpp \
+		main.cpp \
 		mainwindow.cpp moc_mainwindow.cpp
-OBJECTS       = main.o \
+OBJECTS       = baseclass.o \
+		derivedclass.o \
+		main.o \
 		mainwindow.o \
 		moc_mainwindow.o
 DIST          = ../../../../Qt5.14.2/5.14.2/gcc_64/mkspecs/features/spec_pre.prf \
@@ -267,7 +271,11 @@ DIST          = ../../../../Qt5.14.2/5.14.2/gcc_64/mkspecs/features/spec_pre.prf
 		../../../../Qt5.14.2/5.14.2/gcc_64/mkspecs/features/exceptions.prf \
 		../../../../Qt5.14.2/5.14.2/gcc_64/mkspecs/features/yacc.prf \
 		../../../../Qt5.14.2/5.14.2/gcc_64/mkspecs/features/lex.prf \
-		ProjectA.pro mainwindow.h main.cpp \
+		ProjectA.pro baseclass.h \
+		derivedclass.h \
+		mainwindow.h baseclass.cpp \
+		derivedclass.cpp \
+		main.cpp \
 		mainwindow.cpp
 QMAKE_TARGET  = ProjectA
 DESTDIR       = 
@@ -718,8 +726,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../../../../Qt5.14.2/5.14.2/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents mainwindow.h $(DISTDIR)/
-	$(COPY_FILE) --parents main.cpp mainwindow.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents baseclass.h derivedclass.h mainwindow.h $(DISTDIR)/
+	$(COPY_FILE) --parents baseclass.cpp derivedclass.cpp main.cpp mainwindow.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents mainwindow.ui $(DISTDIR)/
 
 
@@ -887,6 +895,13 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_ui
 
 ####### Compile
 
+baseclass.o: baseclass.cpp baseclass.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o baseclass.o baseclass.cpp
+
+derivedclass.o: derivedclass.cpp derivedclass.h \
+		baseclass.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o derivedclass.o derivedclass.cpp
+
 main.o: main.cpp mainwindow.h \
 		../../../../Qt5.14.2/5.14.2/gcc_64/include/QtWidgets/QMainWindow \
 		../../../../Qt5.14.2/5.14.2/gcc_64/include/QtWidgets/qmainwindow.h \
@@ -995,6 +1010,8 @@ main.o: main.cpp mainwindow.h \
 		../../../../Qt5.14.2/5.14.2/gcc_64/include/QtGui/qtouchdevice.h \
 		../../../../Qt5.14.2/5.14.2/gcc_64/include/QtWidgets/qtabwidget.h \
 		../../../../Qt5.14.2/5.14.2/gcc_64/include/QtGui/qicon.h \
+		baseclass.h \
+		derivedclass.h \
 		../../../../Qt5.14.2/5.14.2/gcc_64/include/QtWidgets/QApplication \
 		../../../../Qt5.14.2/5.14.2/gcc_64/include/QtWidgets/qapplication.h \
 		../../../../Qt5.14.2/5.14.2/gcc_64/include/QtCore/qcoreapplication.h \
@@ -1112,7 +1129,26 @@ mainwindow.o: mainwindow.cpp mainwindow.h \
 		../../../../Qt5.14.2/5.14.2/gcc_64/include/QtGui/qtouchdevice.h \
 		../../../../Qt5.14.2/5.14.2/gcc_64/include/QtWidgets/qtabwidget.h \
 		../../../../Qt5.14.2/5.14.2/gcc_64/include/QtGui/qicon.h \
-		ui_mainwindow.h
+		ui_mainwindow.h \
+		../../../../Qt5.14.2/5.14.2/gcc_64/include/QtCore/QVariant \
+		../../../../Qt5.14.2/5.14.2/gcc_64/include/QtWidgets/QApplication \
+		../../../../Qt5.14.2/5.14.2/gcc_64/include/QtWidgets/qapplication.h \
+		../../../../Qt5.14.2/5.14.2/gcc_64/include/QtCore/qcoreapplication.h \
+		../../../../Qt5.14.2/5.14.2/gcc_64/include/QtCore/qeventloop.h \
+		../../../../Qt5.14.2/5.14.2/gcc_64/include/QtWidgets/qdesktopwidget.h \
+		../../../../Qt5.14.2/5.14.2/gcc_64/include/QtGui/qguiapplication.h \
+		../../../../Qt5.14.2/5.14.2/gcc_64/include/QtGui/qinputmethod.h \
+		../../../../Qt5.14.2/5.14.2/gcc_64/include/QtWidgets/QLabel \
+		../../../../Qt5.14.2/5.14.2/gcc_64/include/QtWidgets/qlabel.h \
+		../../../../Qt5.14.2/5.14.2/gcc_64/include/QtWidgets/qframe.h \
+		../../../../Qt5.14.2/5.14.2/gcc_64/include/QtWidgets/QMenuBar \
+		../../../../Qt5.14.2/5.14.2/gcc_64/include/QtWidgets/qmenubar.h \
+		../../../../Qt5.14.2/5.14.2/gcc_64/include/QtWidgets/qmenu.h \
+		../../../../Qt5.14.2/5.14.2/gcc_64/include/QtWidgets/qaction.h \
+		../../../../Qt5.14.2/5.14.2/gcc_64/include/QtWidgets/qactiongroup.h \
+		../../../../Qt5.14.2/5.14.2/gcc_64/include/QtWidgets/QStatusBar \
+		../../../../Qt5.14.2/5.14.2/gcc_64/include/QtWidgets/qstatusbar.h \
+		../../../../Qt5.14.2/5.14.2/gcc_64/include/QtWidgets/QWidget
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o mainwindow.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
