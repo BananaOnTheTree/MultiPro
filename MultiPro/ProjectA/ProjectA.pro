@@ -24,7 +24,8 @@ SOURCES += \
 HEADERS += \
     baseclass.h \
     derivedclass.h \
-    mainwindow.h
+    mainwindow.h \
+    ui_mainwindow.h
 
 FORMS += \
     mainwindow.ui
