@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "baseclass.h"
 #include "derivedclass.h"
+#include "furtherderivedclass.h"
 #include <QApplication>
 
 int main(int argc, char *argv[])
@@ -16,6 +17,6 @@ void showUs(BaseClass a) {
 }
 
 void check() {
-    DerivedClass a;
+    FurtherDerivedClass a;
     showUs(a);
 }

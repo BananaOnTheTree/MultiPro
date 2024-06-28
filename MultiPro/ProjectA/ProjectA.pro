@@ -18,12 +18,14 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     baseclass.cpp \
     derivedclass.cpp \
+    furtherderivedclass.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
     baseclass.h \
     derivedclass.h \
+    furtherderivedclass.h \
     mainwindow.h \
     ui_mainwindow.h
 

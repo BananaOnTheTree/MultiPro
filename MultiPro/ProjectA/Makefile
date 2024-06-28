@@ -54,10 +54,12 @@ OBJECTS_DIR   = ./
 
 SOURCES       = baseclass.cpp \
 		derivedclass.cpp \
+		furtherderivedclass.cpp \
 		main.cpp \
 		mainwindow.cpp moc_mainwindow.cpp
 OBJECTS       = baseclass.o \
 		derivedclass.o \
+		furtherderivedclass.o \
 		main.o \
 		mainwindow.o \
 		moc_mainwindow.o
@@ -273,9 +275,11 @@ DIST          = ../../../../Qt5.14.2/5.14.2/gcc_64/mkspecs/features/spec_pre.prf
 		../../../../Qt5.14.2/5.14.2/gcc_64/mkspecs/features/lex.prf \
 		ProjectA.pro baseclass.h \
 		derivedclass.h \
+		furtherderivedclass.h \
 		mainwindow.h \
 		ui_mainwindow.h baseclass.cpp \
 		derivedclass.cpp \
+		furtherderivedclass.cpp \
 		main.cpp \
 		mainwindow.cpp
 QMAKE_TARGET  = ProjectA
@@ -727,8 +731,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../../../../Qt5.14.2/5.14.2/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents baseclass.h derivedclass.h mainwindow.h ui_mainwindow.h $(DISTDIR)/
-	$(COPY_FILE) --parents baseclass.cpp derivedclass.cpp main.cpp mainwindow.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents baseclass.h derivedclass.h furtherderivedclass.h mainwindow.h ui_mainwindow.h $(DISTDIR)/
+	$(COPY_FILE) --parents baseclass.cpp derivedclass.cpp furtherderivedclass.cpp main.cpp mainwindow.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents mainwindow.ui $(DISTDIR)/
 
 
@@ -903,6 +907,11 @@ derivedclass.o: derivedclass.cpp derivedclass.h \
 		baseclass.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o derivedclass.o derivedclass.cpp
 
+furtherderivedclass.o: furtherderivedclass.cpp furtherderivedclass.h \
+		derivedclass.h \
+		baseclass.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o furtherderivedclass.o furtherderivedclass.cpp
+
 main.o: main.cpp mainwindow.h \
 		../../../../Qt5.14.2/5.14.2/gcc_64/include/QtWidgets/QMainWindow \
 		../../../../Qt5.14.2/5.14.2/gcc_64/include/QtWidgets/qmainwindow.h \
@@ -1013,6 +1022,7 @@ main.o: main.cpp mainwindow.h \
 		../../../../Qt5.14.2/5.14.2/gcc_64/include/QtGui/qicon.h \
 		baseclass.h \
 		derivedclass.h \
+		furtherderivedclass.h \
 		../../../../Qt5.14.2/5.14.2/gcc_64/include/QtWidgets/QApplication \
 		../../../../Qt5.14.2/5.14.2/gcc_64/include/QtWidgets/qapplication.h \
 		../../../../Qt5.14.2/5.14.2/gcc_64/include/QtCore/qcoreapplication.h \
