@@ -19,4 +19,5 @@ void showUs(BaseClass a) {
 void check() {
     FurtherDerivedClass a;
     showUs(a);
+    a.display();
 }
