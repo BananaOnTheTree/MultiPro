@@ -25,6 +25,6 @@ void DerivedClass::call(BaseClass base[]) {
 void DerivedClass::testCall() {
     DerivedClass a, b;
     DerivedClass derived[] = {a, b};
-    call(derived);
+    //call(derived);
     call(getNewArray());
 }
