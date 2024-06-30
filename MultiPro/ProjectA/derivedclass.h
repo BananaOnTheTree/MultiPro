@@ -11,6 +11,7 @@ public:
     void display() override;
     void call(BaseClass base[]);
     void testCall();
+    DerivedClass* getNewArray();
 };
 
 #endif // DERIVEDCLASS_H
