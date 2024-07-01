@@ -12,6 +12,7 @@ public:
     void call(BaseClass base[]);
     void testCall();
     DerivedClass* getNewArray();
+    template <class T> T templateFunc(T x);
 };
 
 #endif // DERIVEDCLASS_H

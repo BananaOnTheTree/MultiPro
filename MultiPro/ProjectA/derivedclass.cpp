@@ -22,9 +22,14 @@ void DerivedClass::call(BaseClass base[]) {
     base[0].display();
 }
 
+template <class T> T DerivedClass::templateFunc(T x) {
+    return x;
+}
+
 void DerivedClass::testCall() {
     DerivedClass a, b;
     DerivedClass derived[] = {a, b};
     //call(derived);
-    call(getNewArray());
+    //call(getNewArray());
+    call(templateFunc<DerivedClass*> (getNewArray()));
 }
