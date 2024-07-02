@@ -8,7 +8,7 @@ class DerivedClass : public BaseClass {
 public:
     DerivedClass();
     ~DerivedClass();
-    void display() override;
+    virtual void display() override;
     void call(BaseClass base[]);
     void testCall();
     DerivedClass* getNewArray();

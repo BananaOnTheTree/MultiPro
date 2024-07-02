@@ -31,5 +31,9 @@ void DerivedClass::testCall() {
     DerivedClass derived[] = {a, b};
     //call(derived);
     //call(getNewArray());
-    call(templateFunc<DerivedClass*> (getNewArray()));
+    try {
+        call(templateFunc<DerivedClass*> (getNewArray()));
+    } catch (int x) {
+        this->display();
+    }
 }
