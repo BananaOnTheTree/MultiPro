@@ -2,7 +2,9 @@
 #ifndef DERIVEDCLASS_H
 #define DERIVEDCLASS_H
 #define getNewArray() newArr()
-
+#define macroCall(base) do {       \
+    call(base);        \
+} while (0)
 #include "baseclass.h"
 
 class DerivedClass : public BaseClass {
