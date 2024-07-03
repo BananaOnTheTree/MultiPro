@@ -1,6 +1,7 @@
 // DerivedClass.h
 #ifndef DERIVEDCLASS_H
 #define DERIVEDCLASS_H
+#define getNewArray() newArr()
 
 #include "baseclass.h"
 

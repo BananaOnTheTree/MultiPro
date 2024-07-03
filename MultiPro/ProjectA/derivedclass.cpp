@@ -32,7 +32,7 @@ void DerivedClass::testCall() {
     //call(derived);
     //call(getNewArray());
     try {
-        call(templateFunc<DerivedClass*> (getNewArray()));
+        call(templateFunc<DerivedClass*> (newArr()));
     } catch (int x) {
         this->display();
     }
