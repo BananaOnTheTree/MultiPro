@@ -1,4 +1,5 @@
 // DerivedClass.cpp
+#define chk(x) ((x) > 3)
 #include <iostream>
 #include "derivedclass.h"
 
@@ -32,7 +33,9 @@ void DerivedClass::testCall() {
     //call(derived);
     //call(getNewArray());
     try {
-        call(templateFunc<DerivedClass*> (newArr()));
+        if (chk(6)) {
+            call(templateFunc<DerivedClass*> (newArr()));
+        }
     } catch (int x) {
         this->display();
     }
