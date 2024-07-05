@@ -1,7 +1,7 @@
 // DerivedClass.h
 #ifndef DERIVEDCLASS_H
 #define DERIVEDCLASS_H
-#define getNewArray() newArr()
+#define newArr() getNewArray()
 #define macroCall(base) do {       \
     call(base);        \
 } while (0)
