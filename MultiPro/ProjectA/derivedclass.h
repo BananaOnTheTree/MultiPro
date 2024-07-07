@@ -16,6 +16,7 @@ public:
     void testCall();
     DerivedClass* getNewArray();
     template <class T> T templateFunc(T x);
+    static int staticFunc();
 };
 
 #endif // DERIVEDCLASS_H

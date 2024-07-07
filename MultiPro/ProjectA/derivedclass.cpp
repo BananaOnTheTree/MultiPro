@@ -26,13 +26,17 @@ template <class T> T DerivedClass::templateFunc(T x) {
     return x;
 }
 
+int DerivedClass::staticFunc() {
+    return 1;
+}
+
 void DerivedClass::testCall() {
     DerivedClass a, b;
     DerivedClass derived[] = {a, b};
     //call(derived);
     //call(getNewArray());
     try {
-        if (chk(newArr())){
+        if (chk(newArr()) && staticFunc()){
             call(templateFunc<DerivedClass*> (newArr()));
         } else {
             macroCall(newArr());
