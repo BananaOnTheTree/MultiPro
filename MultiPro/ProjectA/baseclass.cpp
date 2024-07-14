@@ -13,3 +13,7 @@ BaseClass::~BaseClass() {
 void BaseClass::display() {
     std::cout << "This is the base class." << std::endl;
 }
+
+void BaseClass::doSomething() {
+    std::cout << "Do something";
+}

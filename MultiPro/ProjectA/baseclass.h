@@ -7,6 +7,7 @@ public:
     BaseClass();
     virtual ~BaseClass();
     virtual void display();
+    void doSomething();
 };
 
 #endif // BASECLASS_H

@@ -43,5 +43,6 @@ void DerivedClass::testCall() {
         }
     } catch (int x) {
         this->display();
+        this->doSomething();
     }
 }
