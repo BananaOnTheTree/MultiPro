@@ -30,10 +30,6 @@ int DerivedClass::staticFunc() {
     return 1;
 }
 
-int DerivedClass::privateMethod() {
-    return -1;
-}
-
 void DerivedClass::testCall() {
     DerivedClass a, b;
     DerivedClass derived[] = {a, b};

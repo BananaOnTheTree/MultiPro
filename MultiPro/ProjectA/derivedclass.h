@@ -20,7 +20,9 @@ public:
 protected:
     int protectedAttribute;
 private:
-    int privateMethod();
+    int privateMethod() {
+        return -1;
+    }
 };
 
 #endif // DERIVEDCLASS_H
