@@ -30,6 +30,10 @@ int DerivedClass::staticFunc() {
     return 1;
 }
 
+int DerivedClass::privateMethod() {
+    return -1;
+}
+
 void DerivedClass::testCall() {
     DerivedClass a, b;
     DerivedClass derived[] = {a, b};
@@ -40,6 +44,7 @@ void DerivedClass::testCall() {
             call(templateFunc<DerivedClass*> (newArr()));
         } else {
             macroCall(newArr());
+            std::cout << privateMethod();
         }
     } catch (int x) {
         this->display();

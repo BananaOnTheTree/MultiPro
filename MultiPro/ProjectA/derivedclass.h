@@ -17,6 +17,8 @@ public:
     DerivedClass* getNewArray();
     template <class T> T templateFunc(T x);
     static int staticFunc();
+private:
+    int privateMethod();
 };
 
 #endif // DERIVEDCLASS_H
