@@ -2,7 +2,7 @@
 #define FURTHERDERIVEDCLASS_H
 
 #include "derivedclass.h"
-
+typedef BaseClass bc;
 class FurtherDerivedClass : public DerivedClass {
 public:
     FurtherDerivedClass();

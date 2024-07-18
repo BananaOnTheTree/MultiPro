@@ -11,6 +11,8 @@ FurtherDerivedClass::~FurtherDerivedClass() {
 
 void FurtherDerivedClass::display() {
     std::cout << "This is the further derived class." << std::endl;
-    dc derived;
-    derived.doSomething();
+    dc* derived = new DerivedClass();
+    derived -> doSomething();
+    bc base;
+    base.display();
 }
