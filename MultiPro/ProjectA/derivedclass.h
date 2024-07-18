@@ -6,14 +6,13 @@
     call(base);        \
 } while (0)
 #include "baseclass.h"
-
 class DerivedClass : public BaseClass {
 public:
     DerivedClass();
     ~DerivedClass();
     virtual void display() override;
-    void call(BaseClass base[]);
-    void testCall();
+    virtual void call(BaseClass base[]);
+    virtual void testCall();
     DerivedClass* getNewArray();
     template <class T> T templateFunc(T x);
     static int staticFunc();
@@ -24,5 +23,5 @@ private:
         return -1;
     }
 };
-
+typedef DerivedClass dc;
 #endif // DERIVEDCLASS_H
