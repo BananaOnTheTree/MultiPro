@@ -1,24 +1,8 @@
-#include "mainwindow.h"
-#include "baseclass.h"
-#include "derivedclass.h"
-#include "furtherderivedclass.h"
-#include <QApplication>
-#include <iostream>
+#include <QCoreApplication>
 
 int main(int argc, char *argv[])
 {
-    QApplication a(argc, argv);
-    MainWindow w;
-    w.show();
+    QCoreApplication a(argc, argv);
+
     return a.exec();
-}
-
-void showUs(BaseClass a) {
-    a.display();
-}
-
-void check() {
-    FurtherDerivedClass a;
-    showUs(a);
-    a.display();
 }
