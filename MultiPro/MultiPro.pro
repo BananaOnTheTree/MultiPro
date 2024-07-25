@@ -1,5 +1,5 @@
 TEMPLATE = subdirs
 
 SUBDIRS += \
-    ProjectA \
-    ProjectB
+    App \
+    ProjectA
