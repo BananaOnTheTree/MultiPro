@@ -1,9 +1,13 @@
 TEMPLATE = subdirs
 
 SUBDIRS += \
+    proB \
     app \
     proA
 
 app.subdir = App
 proA.subdir = ProjectA
-proA.depends = app
+proB.subdir = ProjectB
+proA.depends = app proB
+proB.depends =
+app
