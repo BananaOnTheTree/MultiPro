@@ -38,6 +38,10 @@ void DerivedClass::setB(int b) {
     propertyB = b;
 }
 
+void DerivedClass::setBaseClass(BaseClass base) {
+    child = base;
+}
+
 void DerivedClass::testCall() {
     DerivedClass a, b;
     DerivedClass derived[] = {a, b};
@@ -50,6 +54,8 @@ void DerivedClass::testCall() {
             macroCall(newArr());
             std::cout << privateMethod();
         }
+        DerivedClass temp;
+        setBaseClass(temp);
     } catch (int x) {
         this->display();
         this->doSomething();

@@ -10,9 +10,11 @@ class DerivedClass : public BaseClass {
 public:
     int propertyA;
     int propertyB;
+    BaseClass child;
 
     void setA(int a);
     void setB(int b);
+    void setBaseClass(BaseClass base);
     DerivedClass();
     ~DerivedClass();
     virtual void display() override;
