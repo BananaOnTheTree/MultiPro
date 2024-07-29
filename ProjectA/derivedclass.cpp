@@ -30,6 +30,14 @@ int DerivedClass::staticFunc() {
     return 1;
 }
 
+void DerivedClass::setA(int a) {
+    propertyA = a;
+}
+
+void DerivedClass::setB(int b) {
+    propertyB = b;
+}
+
 void DerivedClass::testCall() {
     DerivedClass a, b;
     DerivedClass derived[] = {a, b};

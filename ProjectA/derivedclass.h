@@ -8,6 +8,11 @@
 #include "baseclass.h"
 class DerivedClass : public BaseClass {
 public:
+    int propertyA;
+    int propertyB;
+
+    void setA(int a);
+    void setB(int b);
     DerivedClass();
     ~DerivedClass();
     virtual void display() override;
