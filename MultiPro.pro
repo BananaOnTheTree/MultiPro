@@ -9,5 +9,4 @@ app.subdir = App
 proA.subdir = ProjectA
 proB.subdir = ProjectB
 proA.depends = app proB
-proB.depends =
-app
+proB.depends = app
