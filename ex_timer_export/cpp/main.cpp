@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
     qsrand( QDateTime::currentMSecsSinceEpoch() );
 
     // Expose the RandomTimer class
-    qmlRegisterType<{RandomTimer}>("CustomComponents", 1, 0, "RandomTimer");
+    qmlRegisterType<RandomTimer>("CustomComponents", 1, 0, "RandomTimer");
 
     QQuickView viewer;
     viewer.setSource( QUrl( "qrc:/main.qml" ) );
