@@ -16,3 +16,5 @@ DISTFILES += \
     pyqt/randomtimer.py \
     pyside/main.py \
     pyside/randomtimer.py
+
+for (item, RESOURCES) { message([(RESOURCE)]$$item) }

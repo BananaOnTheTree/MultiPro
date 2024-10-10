@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/qmlfile">
+        <file>DDCloseButton.qml</file>
+        <file>ItemList.qml</file>
+        <file>main.qml</file>
+        <file>MainPage.qml</file>
+        <file>simplefunction.qml</file>
+        <file>YouZanApi.qml</file>
+        <file>YouzanItem.qml</file>
+    </qresource>
+</RCC>

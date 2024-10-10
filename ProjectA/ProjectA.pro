@@ -14,3 +14,6 @@ HEADERS += \
     baseclass.h \
     derivedclass.h \
     furtherderivedclass.h
+
+RESOURCES += \
+    qml.qrc
