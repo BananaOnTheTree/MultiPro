@@ -13,3 +13,9 @@ proA.depends = app proB
 proB.depends = app
 
 message(HELLO)
+
+HEADERS += \
+    ../QML/backend.h
+
+SOURCES += \
+    ../QML/backend.cpp

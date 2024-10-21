@@ -17,3 +17,6 @@ HEADERS += \
 
 RESOURCES += \
     qml.qrc
+
+DISTFILES += \
+    youzan.js
